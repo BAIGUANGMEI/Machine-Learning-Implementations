@@ -13,8 +13,8 @@ Using the dataset from Kaggle [Dataset Link](https://www.kaggle.com/datasets/and
 
 |Method|Accuracy|
 |------|---|
-|Custom Linear Regression|99.0702%|
-|Sklearn Linear Regression|99.0702%|
+|Custom Linear Regression|98.8801%|
+|Sklearn Linear Regression|98.8801%|
 
 ## Decision Tree Classifier (CART)
 The `DecisionTreeCART` class implements the CART algorithm for decision trees. It supports fitting to data, making predictions, and evaluating accuracy.
