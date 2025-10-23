@@ -4,6 +4,7 @@ This repository contains implementations of various machine learning algorithms 
 
 ## Contents
 - Linear Regression
+- Logistic Regression
 - Decision Tree Classifier (CART)
 
 ## Linear Regression
@@ -15,6 +16,18 @@ Using the dataset from Kaggle [Dataset Link](https://www.kaggle.com/datasets/and
 |------|---|
 |Custom Linear Regression|98.8801%|
 |Sklearn Linear Regression|98.8801%|
+
+## Logistic Regression
+
+The `CustomLogisticRegression` class implements logistic regression using gradient descent. It supports fitting to data, making predictions, and evaluating accuracy.
+
+Using the dataset from Kaggle [Dataset Link](https://www.kaggle.com/datasets/kaushiksuresh147/customer-segmentation/data), we preprocess the data and train both our custom logistic regression model and `sklearn`'s implementation for comparison.
+
+|Method|Accuracy|
+|------|--------|
+|Custom Logistic Regression|85.85%|
+|Sklearn Logistic Regression|86.08%|
+
 
 ## Decision Tree Classifier (CART)
 The `DecisionTreeCART` class implements the CART algorithm for decision trees. It supports fitting to data, making predictions, and evaluating accuracy.
