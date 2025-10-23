@@ -21,7 +21,7 @@ Using the dataset from Kaggle [Dataset Link](https://www.kaggle.com/datasets/and
 
 The `CustomLogisticRegression` class implements logistic regression using gradient descent. It supports fitting to data, making predictions, and evaluating accuracy.
 
-Using the dataset from Kaggle [Dataset Link](https://www.kaggle.com/datasets/kaushiksuresh147/customer-segmentation/data), we preprocess the data and train both our custom logistic regression model and `sklearn`'s implementation for comparison.
+Using the dataset from Kaggle [Dataset Link](https://www.kaggle.com/datasets/dileep070/heart-disease-prediction-using-logistic-regression/data), we preprocess the data and train both our custom logistic regression model and `sklearn`'s implementation for comparison.
 
 |Method|Accuracy|
 |------|--------|
