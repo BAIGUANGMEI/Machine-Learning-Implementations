@@ -48,12 +48,10 @@ class DecisionTreeCART:
             # Get unique thresholds for the feature
             thresholds = np.unique(X[:, feature_index])
 
-            # Handle binary features separately
-            if len(np.unique(X[:, feature_index])) <= 2:
-                threshold = 0.5
+            for threshold in thresholds:
                 left_indices = X[:, feature_index] <= threshold
                 right_indices = X[:, feature_index] > threshold
-            
+
                 if len(y[left_indices]) == 0 or len(y[right_indices]) == 0:
                     continue
 
@@ -69,28 +67,6 @@ class DecisionTreeCART:
                         'left_indices': left_indices,
                         'right_indices': right_indices
                     }
-            
-            # Non-binary features
-            else:
-                for threshold in thresholds:
-                    left_indices = X[:, feature_index] <= threshold
-                    right_indices = X[:, feature_index] > threshold
-
-                    if len(y[left_indices]) == 0 or len(y[right_indices]) == 0:
-                        continue
-
-                    gini_left = self._calculate_gini(y[left_indices])
-                    gini_right = self._calculate_gini(y[right_indices])
-                    weighted_gini = (len(y[left_indices]) * gini_left + len(y[right_indices]) * gini_right) / n_samples
-
-                    if weighted_gini < best_gini:
-                        best_gini = weighted_gini
-                        best_split = {
-                            'feature_index': feature_index,
-                            'threshold': threshold,
-                            'left_indices': left_indices,
-                            'right_indices': right_indices
-                        }
         return best_split
     
     def _build_tree(self, X, y, depth):
@@ -164,19 +140,11 @@ class DecisionTreeCART:
             return tree['class']
         
         feature_value = sample[tree['feature_index']]
-        # Binary feature
-        if len(np.unique(X[:, tree['feature_index']])) <= 2:
-            threshold = 0.5
-            if feature_value <= threshold:
-                return self._predict_sample(sample, X, tree['left'])
-            else:
-                return self._predict_sample(sample, X, tree['right'])
-        # Non-binary feature
-        else:  
-            if feature_value <= tree['threshold']:
-                return self._predict_sample(sample, X, tree['left'])
-            else:
-                return self._predict_sample(sample, X, tree['right'])
+  
+        if feature_value <= tree['threshold']:
+            return self._predict_sample(sample, X, tree['left'])
+        else:
+            return self._predict_sample(sample, X, tree['right'])
 
     def importance(self):
         '''
