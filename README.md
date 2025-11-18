@@ -7,6 +7,10 @@ This repository contains implementations of various machine learning algorithms 
 ---
 
 ## Contents
+- ### Basic
+  - [Numpy](#basic)
+  - [Pandas](#basic)
+  - [Matplotlib](#basic)
 - ### Supervised Learning
   - [Linear Regression](#linear-regression)
   - [Logistic Regression](#logistic-regression)
@@ -16,6 +20,9 @@ This repository contains implementations of various machine learning algorithms 
   - [K-Means Clustering](#k-means-clustering)
 
 ---
+
+## Basic
+This section includes basic libraries such as Numpy for numerical computations, Pandas for data manipulation, and Matplotlib for data visualization. All the details can be found in the [basic](./basic) folder.
 
 ## Linear Regression
 The `LinearRegression` class implements the ordinary least squares method for linear regression. It includes methods for fitting the model to data and making predictions.
